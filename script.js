@@ -8,24 +8,21 @@ console.log(array); // Результат: [1, 3, 6, 2, 5, 7]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-const array = [4, 1, 4, 3, 4, 6, 2, 4, 5, 4, 7, 4, 4];
+const array = [4, 4, 1, 4, 3, 4, 4, 6, 2, 4, 4, 4, 5, 4, 7, 4, 4, 4, 4, 4, 4];
 
 function removeElement(array, value) {
+  const resultArray = [];
 
-  for (const item of array) {
+  for (let i = 0; i < array.length; i++) {
 
-    if (array.includes(value)) {
+    if (array[i] !== value) {
 
-      const index = array.indexOf(value);
-      if (index !== -1) {
-
-        array.splice(index, 1);
-      }
+      resultArray.push(array[i]);
     }
   }
 
-  return array;
+  return resultArray;
 }
 
-removeElement(array, 4);
-console.log(array); // Результат: [1, 3, 6, 2, 5, 7]
+const result = removeElement(array, 4);
+console.log(result);                    // Результат: [1, 3, 6, 2, 5, 7]
